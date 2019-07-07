@@ -1,6 +1,7 @@
 require "searchlight/version"
+require_relative "searchlight/relation"
+require_relative "searchlight/model"
 
 module Searchlight
-  class Error < StandardError; end
-  # Your code goes here...
+
 end
