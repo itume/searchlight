@@ -1,8 +1,12 @@
 # Searchlight
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/searchlight`. To experiment with that code, run `bin/console` for an interactive prompt.
+アプリケーション内でModelが以下の用途で使われたことを検出し、ログに出力します。
 
-TODO: Delete this and the text above, and describe your gem
+* initilaize時
+* associationで呼ばれたとき
+
+検出結果はsearchlight_loggerという名前のLoggerに出力します。
+ログへの出力は、アプリケーション起動中に一度だけ行います。
 
 ## Installation
 
@@ -22,7 +26,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+searchlight_loggerという名前のLoggerに検出結果を出力するため、Configのどこかでsearchlight_loggerを使えるように設定してください。
+
+Example
+
+    # in config/application.rb
+    config.searchlight_logger = Logger.new('log/searchlight.log')
+
 
 ## Development
 
